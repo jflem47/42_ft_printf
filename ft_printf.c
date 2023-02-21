@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:26:28 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/02/16 15:31:17 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/02/20 13:10:55 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,25 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	args;
 	char	flag;
+	int		i;
 
+	i = 0;
 	va_start(args, str);
 	while (*str != '\0')
 	{
 		if (*str == '%')
 		{
 			flag = parse_format(str);
-			print_factory(args, flag);
+			i += print_factory(args, flag);
 			str += 2;
 		}
 		else
 		{
 			ft_putchar_fd((char)*str, 1);
 			str++;
+			i++;
 		}
 	}
 	va_end(args);
-	return (0);
-}
-
-int	main(void)
-{
-	ft_printf("%x\n", "salut");
-	printf("%%\n");
-	ft_printf("%%\n");
-	return (0);
+	return (i);
 }

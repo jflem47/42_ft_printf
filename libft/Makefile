@@ -67,10 +67,6 @@ $(NAME): $(BIN_DIR) $(OBJS)
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
 
-bonus: $(BIN_DIR) $(BONUS_OBJS)
-	$(LIBC) $(NAME) $(BONUS_OBJS)
-	$(LIBR) $(NAME)
-
 clean:
 	$(RM_DIR) $(BIN_DIR)
 

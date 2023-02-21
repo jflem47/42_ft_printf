@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 12:16:39 by jlemieux          #+#    #+#             */
+/*   Updated: 2023/02/20 13:57:47 by jlemieux         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	check_base(char *base)
@@ -33,8 +45,8 @@ void	ft_putnbr_base(int nbr, char *base)
 	int	nbr_final[100];
 	int	i;
 
-	i = 0;
 	size_base = 0;
+	i = 0;
 	if (check_base(base))
 	{
 		if (nbr < 0)
