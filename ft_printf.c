@@ -6,7 +6,7 @@
 /*   By: jlemieux <jlemieux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:26:28 by jlemieux          #+#    #+#             */
-/*   Updated: 2023/02/20 13:10:55 by jlemieux         ###   ########.fr       */
+/*   Updated: 2023/02/21 13:08:56 by jlemieux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_printf(const char *str, ...)
 	int		i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	va_start(args, str);
 	while (*str != '\0')
 	{
